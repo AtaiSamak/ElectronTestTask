@@ -1,0 +1,62 @@
+.inputWrapper {
+    float: left;
+    width: 50%;
+    margin: 40px 3%;
+    position: relative;
+}
+
+.input {
+    font: 15px/24px "Muli", sans-serif;
+    color: #333;
+    width: 100%;
+    box-sizing: border-box;
+    letter-spacing: 1px;
+    outline: none;
+    border: 1px solid #ccc;
+    padding: 7px 14px 9px;
+    transition: 0.4s;
+}
+.input ~ .focusBorder:before,
+.input ~ .focusBorder:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #4caf50;
+    transition: 0.3s;
+}
+.input ~ .focusBorder:after {
+    top: auto;
+    bottom: 0;
+    left: auto;
+    right: 0;
+}
+.input ~ .focusBorder i:before,
+.input ~ .focusBorder i:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2.5px;
+    height: 0;
+    background-color: #4caf50;
+    transition: 0.4s;
+}
+.input ~ .focusBorder i:after {
+    left: auto;
+    right: 0;
+    top: auto;
+    bottom: 0;
+}
+.input:focus ~ .focusBorder:before,
+.input:focus ~ .focusBorder:after {
+    width: 100%;
+    transition: 0.3s;
+}
+.input:focus ~ .focusBorder i:before,
+.input:focus ~ .focusBorder i:after {
+    height: 100%;
+    transition: 0.4s;
+}
