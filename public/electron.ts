@@ -1,6 +1,6 @@
 const path = require("path");
 
-const { app, BrowserWindow, ipcMain } = require("electron");
+const { app, BrowserWindow, dialog, ipcMain } = require("electron");
 const isDev = require("electron-is-dev");
 
 function createWindow() {
@@ -9,7 +9,14 @@ function createWindow() {
         height: 600,
         webPreferences: {
             nodeIntegration: true,
+            enableRemoteModule: true,
+            contextIsolation: true,
+            preload: path.join(__dirname, "preload.ts"),
         },
+    });
+
+    ipcMain.on("download", async (event, url) => {
+        win.webContents.downloadURL(url);
     });
 
     win.loadURL(

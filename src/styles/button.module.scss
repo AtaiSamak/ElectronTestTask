@@ -24,20 +24,18 @@
     -webkit-user-select: none;
     touch-action: manipulation;
 
-    &:focus {
-        color: #171e29;
-    }
-
     &:hover {
         background-color: #3385ff;
         border-color: #3385ff;
         fill: #06f;
+        color: #171e29;
     }
 
     &:active {
         background-color: #3385ff;
         border-color: #3385ff;
         fill: #06f;
+        color: #171e29;
     }
 }
 

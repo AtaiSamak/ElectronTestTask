@@ -1,7 +1,7 @@
 {
   "name": "electron",
   "version": "0.1.0",
-  "main": "public/electron.js",
+  "main": "public/electron.ts",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
@@ -26,7 +26,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "dev": "concurrently -k \"cross-env BROWSER=none npm start\" \"npm:electron\"",
-    "electron": "wait-on tcp:3000 && electron ."
+    "electron": "wait-on tcp:3000 && nodemon --watch ./public/*.ts --exec \"electron .\""
   },
   "eslintConfig": {
     "extends": [
@@ -49,6 +49,7 @@
   "devDependencies": {
     "concurrently": "^7.2.2",
     "electron": "^19.0.7",
+    "nodemon": "^2.0.19",
     "sass": "^1.53.0",
     "wait-on": "^6.0.1"
   }

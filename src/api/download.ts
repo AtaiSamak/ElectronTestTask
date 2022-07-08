@@ -1,11 +1,6 @@
-import { ipcRenderer } from "electron";
-
 const download = (url: string) => {
-    ipcRenderer.send("download", {
-        payload: {
-            url: url,
-        },
-    });
+    const path = (window as any).electronAPI.download(url);
+    console.log(path);
 };
 
 export default download;
